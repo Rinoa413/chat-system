@@ -30,7 +30,6 @@ export const PostComment = () => {
             <div id="modalContent">            
                 <div className="modalCenter">
                     {/* ここに書く */}
-                    <div>
                         <textarea
                             id="commentInput"
                             placeholder="コメントを入力"
@@ -38,9 +37,7 @@ export const PostComment = () => {
                             value={comment}
                             rows={1} 
                         />
-                        
-                    </div>
-                    </div>
+                </div>
                 <div className="modalBottom">
                     {/* ここに画像選択とか、文字数とか */}
                     <button className="post-btn" onClick={pushPost} disabled={!comment}>投稿</button>
