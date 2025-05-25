@@ -3,7 +3,7 @@ import { app } from "../../firebase/firebase";
 import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
 import "../PostCommet/PostComment.css"
 
-export const PostComment = () => {
+export const PostComment = ({ onPostSuccess }) => {
     const db = getFirestore(app);
     const [comment, setComment] = useState('');
 
@@ -19,6 +19,7 @@ export const PostComment = () => {
                 time: serverTimestamp(),
             });
             alert("投稿の保存に成功しました。");
+            onPostSuccess();
         } catch (error) {
             console.error("投稿保存中にエラーが発生しました:", error);
             alert("投稿の保存に失敗しました。");

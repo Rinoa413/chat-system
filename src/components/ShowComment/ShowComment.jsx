@@ -1,29 +1,27 @@
-import React,{ useEffect, useState } from 'react';
-import { db } from '../../firebase/firebase';
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import React from 'react';
 
-function ShowComment() {
-    const [comments, setComments] = useState([]);
+function ShowComment({ comments }) {
+    // const [comments, setComments] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const q = query(collection(db, 'board'), orderBy('time','desc'));
-                const snapshot = await getDocs(q);
-                const data = snapshot.docs.map((doc,index) => ({
-                    id: doc.id,
-                    number: index + 1,
-                    ...doc.data()
-                }));
-                console.log("取得データ",data);
-                setComments(data);
-            }catch (error) {
-                console.error('データ取得にエラーが出ました。',error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const q = query(collection(db, 'board'), orderBy('time','desc'));
+    //             const snapshot = await getDocs(q);
+    //             const data = snapshot.docs.map((doc,index) => ({
+    //                 id: doc.id,
+    //                 number: index + 1,
+    //                 ...doc.data()
+    //             }));
+    //             console.log("取得データ",data);
+    //             setComments(data);
+    //         }catch (error) {
+    //             console.error('データ取得にエラーが出ました。',error);
+    //         }
+    //     };
 
-        fetchData();
-    },[]);
+    //     fetchData();
+    // },[]);
 
     return (
         <div className="comment-area">
