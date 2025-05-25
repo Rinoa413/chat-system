@@ -30,8 +30,8 @@ function ShowComment() {
             {comments.length === 0 ? (
                 <p>コメントはまだありません。</p>
         ) : (
-        comments.map((item) => (
-            <div className="comment-card" key={item.id}>
+        comments.map((item, index) => (
+            <div className={`comment-card ${index % 2 === 0 ? 'even' : 'odd'}`} key={item.id}>
                 <div style={{ display: "flex", justifyContent: "flex-start", gap: "1.5rem", marginBottom: "8px" }}>
                     <span>番号：{item.number}</span>
                     <span>名前：{item.name || '名無しさん'}</span>
