@@ -57,6 +57,8 @@
   margin-left: auto;
   margin-right: auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .comment-card:nth-child(even) {
@@ -71,4 +73,48 @@
 .comment-card:hover {
   transform: scale(1.02); 
   box-shadow: 0 6px 12px rgba(255, 182, 193, 0.5); /* ピンク系の影 */
+}
+
+.sakura-container {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sakura {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: url('../../sakura.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-20px) translateY(25vh) rotate(90deg);
+  }
+  50% {
+    transform: translateX(20px) translateY(50vh) rotate(180deg);
+  }
+  75% {
+    transform: translateX(-20px) translateY(75vh) rotate(270deg);
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
 }
