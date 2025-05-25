@@ -1,28 +1,6 @@
 import React from 'react';
 
 function ShowComment({ comments }) {
-    // const [comments, setComments] = useState([]);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const q = query(collection(db, 'board'), orderBy('time','desc'));
-    //             const snapshot = await getDocs(q);
-    //             const data = snapshot.docs.map((doc,index) => ({
-    //                 id: doc.id,
-    //                 number: index + 1,
-    //                 ...doc.data()
-    //             }));
-    //             console.log("取得データ",data);
-    //             setComments(data);
-    //         }catch (error) {
-    //             console.error('データ取得にエラーが出ました。',error);
-    //         }
-    //     };
-
-    //     fetchData();
-    // },[]);
-
     return (
         <div className="comment-area">
             {comments.length === 0 ? (

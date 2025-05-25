@@ -39,7 +39,6 @@ export const PostComment = ({ onPostSuccess }) => {
                         />
                 </div>
                 <div className="modalBottom">
-                    {/* ここに画像選択とか、文字数とか */}
                     <button className="post-btn" onClick={pushPost} disabled={!comment}>投稿</button>
                     
                 </div>       
