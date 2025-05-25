@@ -1,0 +1,66 @@
+
+
+/* モーダルコンテンツのスタイル（理想の画面のピンク色の部分）*/
+#modalContent {
+    display: flex;
+}
+  /* modalBottom も理想の画面には存在しないため非表示にする */
+.modalBottom {
+
+}
+
+/* modalCenter のスタイル（コメント入力と投稿ボタンのコンテナ）*/
+.modalCenter {
+    width: 100%; /* modalContent の幅いっぱいに広げる */
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+    /* gap: 10px; */ /* 入力欄とボタンの間隔 (textareaにmargin-rightで設定するため削除) */
+    /* background-color: #fff; */ /* 理想の画面には入力欄の背景が白ではないため削除 */
+    padding: 0; /* 内側の余白はなし */
+    border: none; /* コンテナのボーダーはなし */
+    border-radius: 0; /* 角丸もなし */
+}
+
+  /* テキストエリアのスタイル */
+.modalCenter textarea {
+    flex-grow: 1; /* 残りのスペースを全て使用 */
+    padding: 10px 15px; /* 内側の余白 */
+    border: 1px solid #ff9999; /* 理想の画面の赤いボーダー */
+    border-radius: 5px; /* 角を丸くする */
+    background-color: #ffe4e1; /* モーダルコンテンツと同じ薄いピンクの背景 */
+    font-size: 16px;
+    color: #333;
+    resize: none; /* リサイズを無効にする (理想の画面ではリサイズバーがないため) */
+    height: 40px; /* 高さの固定（理想の画面の高さに合わせる）*/
+    line-height: 20px; /* 行の高さ */
+    overflow: hidden; /* 内容がはみ出てもスクロールバーを表示しない */
+    outline: none; /* フォーカス時のアウトラインを非表示 */
+    margin-right: 10px; /* 投稿ボタンとの間隔 */
+}
+
+  /* テキストエリアのプレースホルダーのスタイル */
+.modalCenter textarea::placeholder {
+    color: #a0a0a0; /* プレースホルダーの色 */
+}
+
+  /* 投稿ボタンのスタイル */
+.post-btn {
+    background-color: #fdd8d7; /* 理想の画面のボタンの色 */
+    color: #333; /* 文字色 */
+    border: 1px solid #fcc4c2; /* 理想の画面のボタンのボーダー */
+    border-radius: 20px; /* ボタンを楕円形にする */
+    padding: 8px 20px; /* 内側の余白 */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap; /* ボタン内のテキストが改行されないように */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+}
+
+.post-btn:disabled {
+    background-color: #fcebeb; /* 非活性時の色 */
+    border-color: #fbe0e0;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
