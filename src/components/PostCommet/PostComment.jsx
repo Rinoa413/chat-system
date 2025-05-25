@@ -18,7 +18,6 @@ export const PostComment = ({ onPostSuccess }) => {
                 comment: comment,
                 time: serverTimestamp(),
             });
-            alert("投稿の保存に成功しました。");
             onPostSuccess();
         } catch (error) {
             console.error("投稿保存中にエラーが発生しました:", error);
