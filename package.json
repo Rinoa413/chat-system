@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Rinoa413/chat-system/issues"
   },
-  "homepage": "https://github.com/Rinoa413/chat-system#readme"
+  "homepage": "https://github.com/Rinoa413/chat-system#readme",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
 }
